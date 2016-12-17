@@ -1,0 +1,37 @@
+{
+  "name": "harpjs",
+
+  "authors": [
+    "bedeute <bedeute@gmail.com>"
+  ],
+
+  "description": "",
+  "main": "",
+  "license": "WTFPL",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+
+  "dependencies": {
+    "spectre.css": "^0.1.26"
+  },
+
+  "install": {
+    "path": {
+      "base": "_bower_components",
+      "css": "assets/styles",
+      "js": "assets/scripts",
+      "/[sc|le]ss$/": "assets/styles"
+    },
+
+    "sources": {
+        "spectre.css": "_bower_components/spectre.css/spectre.less"
+    }
+  }
+}
