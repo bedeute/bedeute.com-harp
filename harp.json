@@ -1,3 +1,9 @@
 {
-	"domains":[]
+	"domains":[],
+
+	"globals": {
+		"baseUrl": "",
+    "title": "bedeute",
+    "description": "Personal web of bedeute"
+  }
 }

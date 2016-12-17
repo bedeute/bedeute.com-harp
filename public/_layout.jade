@@ -1,7 +1,6 @@
 doctype
 html
-  head
-    link(rel="stylesheet" href="/assets/styles/main.css")
-    link(rel="stylesheet" href="/_bower_components/spectre.css/dist/spectre.css")
-  body
-    != yield
+	head
+		!= partial("_partials/head")
+	body
+		!= yield
