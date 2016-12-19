@@ -1,17 +1,28 @@
-img(src='assets/images/bedeute-avatar-blended-color.png')
-
-.card.card-landing-page
-	.card-body
-		.logo Logo here
-		.shoutout {Hello World}
-		.whoiam
-			p I'm
-				strong Nanang
-			p I'm a 
-				strong Web Designer
-			span.text-muted and yes
-			p I'm a 
-				strong Human
+.landing-page-cards
+	.card.landing-page-sidecard
+		.card-body
+			.avatar
+				img(src="#{baseUrl}/assets/images/bedeute-avatar-colored.png")
+			ul.sidecard-menu
+				each link in public._data.menuLinks
+					li: a(href="#{ link.url }") #{ link.title }
+	.card.landing-page-maincard
+		.card-body
+			.logo
+				img(src="#{baseUrl}/assets/images/bedeute-logo-with-shadow.png")
+			.shoutout { Hello World }
+			.whoiam
+				p I'm 
+					strong Nanang
+				p I'm a 
+					strong Web Designer
+				p
+					span.text-muted and yes,
+					| I'm a 
+					strong Human
 
 			.recent-job Recently I'm a part of web developer team at
-			| mataharilabs
+				span mataharilabs
+		.card-footer.maincard-contact
+			label Get closer
+			span bedeute@gmail.com | @bedeute

@@ -2,5 +2,10 @@ doctype
 html
 	head
 		!= partial("_partials/head")
-	body
+	body.landing-page
+
+		//- .harp-env-notif Harp is in under #{ environment }
+
+		!= partial("_partials/main-nav")
+
 		!= yield

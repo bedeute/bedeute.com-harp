@@ -23,9 +23,10 @@
 @import '_variable';
 
 // google fonts
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import (css) '#{baseUrl}/assets/fonts/open-sans.css';
 
-
+// global styles
+// ----------------------------------
 body{
   // font-family: "Helvetica";
   text-align: center;
@@ -33,10 +34,245 @@ body{
   color: @body-font-color;
 }
 
+.logo-path {
+  fill:none;
+  stroke:#F49E39;
+  stroke-miterlimit:10;
+  stroke-width: 2px;
+}
 
-.card-landing-page {
+// main nav styles
+// ----------------------------------
+.main-nav {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+
+  .clearfix();
+
+  .brand {
+    float: left;
+    display: block;
+    width: 48px;
+    height: 40px;
+    padding: 8px 12px;
+
+    &:hover,
+    &:focus {
+      background-color: #f9f9f9;
+
+      .logo-path {
+        stroke: none;
+        fill: #f6c53c;
+      }
+    }
+  }
+
+  ul {
+    display: inline-block;
+    list-style: none;
+    float: right;
+    margin: 0 4px 0 0;
+
+    li {
+      display: inline-block;
+      margin-top: 0;
+
+      a {
+        text-decoration: none;
+        color: #777;
+        font-weight: 300;
+        padding: 6px 10px;
+        margin-top: 4px;
+        display: block;
+        .animate-global();
+
+        &:hover,
+        &:focus {
+          color: @core-link-color;
+          background-color: #f9f9f9;
+        }
+      }
+    }
+  }
+}
+
+
+
+.harp-env-notif {
+	position: fixed;
+	background: rebeccapurple;
+}
+
+
+// landing page styles
+// ----------------------------------
+.landing-page{
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-linear-gradient(top right, #fff 50%, #f5f2ed 50%);
+    z-index: -1;
+  }
+
+  .main-nav {
+    display: none;
+    @media screen and (max-width: @size-sm) {
+      display: block;
+    }
+  }
+}
+
+.landing-page-cards {
+  .clearfix();
+  max-width: 540px;
+  padding-top: 60px;
+  padding-left: 5px;
+  padding-right: 5px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 512px;
+
+  @media screen and (max-width: @size-sm) {
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.landing-page-sidecard {
+  width: 130px;
+  float: left;
+  margin-top: 34px;
+  transform: translateX(8px);
+  background-image: -webkit-linear-gradient(top right, #f5cd3a 0%, #FB9B45 100%);
+  .animate-global();
+
+  @media screen and (max-width: @size-sm) {
+    display: none;
+  }
+
+  .avatar {
+    margin: 27px 0 20px 66px;
+  }
+}
+
+.sidecard-menu {
+  margin: 0 0 14px 0;
+  list-style: none;
+
+  li {
+    margin-top: 0;
+    text-align: right;
+
+    a {
+      display: inline-block;
+      padding: 6px 8px;
+      font-size: 1.6rem;
+      color: #fff;
+      text-decoration: none;
+      .animate-global();
+
+      &:hover,
+      &:focus {
+        opacity: .7;
+        transform: translateX(-1px);
+      }
+    }
+  }
+}
+
+.landing-page-maincard {
+  margin-left: auto;
+  float: left;
+  margin-right: auto;
+  width: 400px;
   text-align: center;
+  position: relative;
+  .animate-global();
+
+  @media screen and (max-width: @size-sm) {
+    width: 100%;
+    float: none;
+  }
+
+  .logo {
+    margin-top: 38px;
+
+    > img {
+      width: 90px;
+    }
+  }
+
+  .shoutout {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #777;
+    margin-bottom: 16px;
+  }
+
+  .whoiam {
+    font-weight: 300;
+
+    strong {
+      font-weight: 500;
+      color: #555;
+    }
+
+    p {
+      margin-bottom: 0.6rem;
+       span {
+        display: block;
+      }
+    }
+  }
+
+  .recent-job {
+    margin-top: 20px;
+    color: #999;
+    font-size: 1.2rem;
+
+    span {
+      display: block;
+      font-size: 1.4rem;
+      letter-spacing: .7rem;
+      color: #777;
+      font-weight: 300;
+    }
+  }
+}
+
+.maincard-contact {
+  position: relative;
+  border-top: 1px solid #f3f3f3;
+  margin-top: 26px;
+  padding-top: 18px !important;
+  background-color: #fcfcfc;
+
+  label {
+    display: block;
+    width: auto;
+    top: -14px;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    padding: 2px 16px;
+    color: #999;
+    position: absolute;
+    left: 50%;
+    font-size: 1.2rem;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+
+  }
+
+  span {
+    display: block;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    color: #999;
+    font-size: 1.3rem;
+  }
 }

@@ -1,0 +1,7 @@
+{
+	"menuLinks": [
+		{ "url": "", "title": "About" },
+		{ "url": "portfolio", "title": "Portfolio" },
+		{ "url": "blog", "title": "Blog" }
+	]
+}
