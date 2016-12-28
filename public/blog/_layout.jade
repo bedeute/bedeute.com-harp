@@ -1,0 +1,11 @@
+doctype
+html
+	head
+		!= partial("../_partials/head")
+	body.blog-post
+
+
+		!= partial("../_partials/main-nav")
+
+		.blog-post-wrapper
+			!= yield

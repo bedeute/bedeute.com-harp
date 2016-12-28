@@ -1,37 +1,41 @@
 // Core variables
-@import 'bower_components/spectre.css/src/variables.less';
+@import '_bower_components/spectre.css/src/variables.less';
 
 // Reset and dependencies
-@import 'bower_components/spectre.css/src/normalize.less';
-@import 'bower_components/spectre.css/src/base.less';
+@import '_bower_components/spectre.css/src/normalize.less';
+@import '_bower_components/spectre.css/src/base.less';
 
 // Core classes
-@import 'bower_components/spectre.css/src/typography.less';
-@import 'bower_components/spectre.css/src/buttons.less';
+@import '_bower_components/spectre.css/src/typography.less';
+@import '_bower_components/spectre.css/src/buttons.less';
 
-@import 'bower_components/spectre.css/src/layout.less';
-@import 'bower_components/spectre.css/src/cards.less';
+@import '_bower_components/spectre.css/src/layout.less';
+@import '_bower_components/spectre.css/src/cards.less';
 .card {
   box-shadow: @card-box-shadow;
 }
 
 
 // spectre.les
-@import (reference) 'bower_components/spectre.css/spectre.less';
+@import (reference) '_bower_components/spectre.css/spectre.less';
 
 // Overwrites variable
 @import '_variable';
 
 // google fonts
-@import (css) '#{baseUrl}/assets/fonts/open-sans.css';
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i');
+// @import (css) '#{baseUrl}/assets/fonts/lora.css';
 
 // global styles
 // ----------------------------------
 body{
   // font-family: "Helvetica";
-  text-align: center;
   background: #f9f9f9;
   color: @body-font-color;
+
+  html, & {
+    height: 100%;
+  }
 }
 
 .logo-path {
@@ -44,17 +48,14 @@ body{
 // main nav styles
 // ----------------------------------
 .main-nav {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-
   .clearfix();
 
   .brand {
     float: left;
     display: block;
-    width: 48px;
-    height: 40px;
-    padding: 8px 12px;
+    width: 54px;
+    height: 46px;
+    padding: 10px 14px;
 
     &:hover,
     &:focus {
@@ -80,9 +81,8 @@ body{
       a {
         text-decoration: none;
         color: #777;
-        font-weight: 300;
-        padding: 6px 10px;
-        margin-top: 4px;
+        padding: 8px 10px;
+        margin-top: 5px;
         display: block;
         .animate-global();
 
@@ -107,6 +107,7 @@ body{
 // landing page styles
 // ----------------------------------
 .landing-page{
+  text-align: center;
 
   &:before {
     content: '';
@@ -120,6 +121,10 @@ body{
 
   .main-nav {
     display: none;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    font-weight: 300;
+
     @media screen and (max-width: @size-sm) {
       display: block;
     }
@@ -129,16 +134,28 @@ body{
 .landing-page-cards {
   .clearfix();
   max-width: 540px;
-  padding-top: 60px;
+  // padding-top: 60px;
   padding-left: 5px;
   padding-right: 5px;
   margin-left: auto;
   margin-right: auto;
 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+
   @media screen and (max-width: @size-sm) {
     width: auto;
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  @media screen and (max-height: 550px) {
+    position: relative;
+    margin-top: 16px;
+    transform: none;
   }
 }
 
@@ -274,5 +291,62 @@ body{
     letter-spacing: .1rem;
     color: #999;
     font-size: 1.3rem;
+  }
+}
+
+
+
+// Bloggin section styles
+// ----------------------------------
+
+.blog-post {
+  background-color: #fafafa;
+}
+
+.blog-post-wrapper {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Lora", serif;
+
+  figure {
+    margin: 3rem 0 0;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    margin-bottom: 1.6rem;
+  }
+}
+
+figure {
+  text-align: center;
+  margin-bottom: 0;
+
+  img {
+    max-width: 100%;
+  }
+
+  figcaption {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    padding: 4px 16px;
+    font-size: 1.2rem;
+    color: #999;
+    border-radius: 32px;
+
+    a {
+      color: #999;
+      .animate-global();
+
+      &:hover,
+      &:focus {
+        color: #777;
+      }
+    }
   }
 }
