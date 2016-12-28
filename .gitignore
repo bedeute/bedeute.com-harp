@@ -1,2 +1,3 @@
 node_modules
-_deploy
+_deploy/*
+!_deploy/CNAME
