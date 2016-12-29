@@ -8,6 +8,6 @@
 @core-color: #f49e39;
 @core-link-color: #f49e39;
 
-.animate-global {
-	transition: all .18s ease-in-out;
+.animate-global(@prop: all, @duration: .18s, @style: ease-in-out) {
+	transition: @prop @duration @style;
 }

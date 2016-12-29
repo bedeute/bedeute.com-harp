@@ -23,13 +23,15 @@
 @import '_variable';
 
 // google fonts
-@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i');
-// @import (css) '#{baseUrl}/assets/fonts/lora.css';
+@import (css) '_open-sans.css';
+@import (css) '_merriweather.css';
+@import (css) '_droid-serif.css';
+@import (css) '_Source-sans-pro.css';
 
 // global styles
 // ----------------------------------
 body{
-  // font-family: "Helvetica";
+  // font-family: "Source Sans Pro", @body-font-family;
   background: #f9f9f9;
   color: @body-font-color;
 
@@ -49,13 +51,19 @@ body{
 // ----------------------------------
 .main-nav {
   .clearfix();
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
 
   .brand {
     float: left;
     display: block;
-    width: 54px;
-    height: 46px;
-    padding: 10px 14px;
+    width: 60px;
+    height: 50px;
+    padding: 12px 18px;
+    .animate-global();
 
     &:hover,
     &:focus {
@@ -72,7 +80,7 @@ body{
     display: inline-block;
     list-style: none;
     float: right;
-    margin: 0 4px 0 0;
+    margin: 0 6px 0 0;
 
     li {
       display: inline-block;
@@ -82,7 +90,7 @@ body{
         text-decoration: none;
         color: #777;
         padding: 8px 10px;
-        margin-top: 5px;
+        margin-top: 6px;
         display: block;
         .animate-global();
 
@@ -93,6 +101,20 @@ body{
         }
       }
     }
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+  }
+
+  &, &.headroom--top {
+    transform: translateY(0);
+    .animate-global();
+  }
+
+  &.headroom--not-top {
+    background-color: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 2px 4px rgba(9, 9, 9, 0.08);
   }
 }
 
@@ -117,6 +139,11 @@ body{
     height: 100%;
     background-image: -webkit-linear-gradient(top right, #fff 50%, #f5f2ed 50%);
     z-index: -1;
+    top: 0;
+
+    @media screen and (max-height: 460px) {
+      position: fixed;
+    }
   }
 
   .main-nav {
@@ -165,10 +192,13 @@ body{
   margin-top: 34px;
   transform: translateX(8px);
   background-image: -webkit-linear-gradient(top right, #f5cd3a 0%, #FB9B45 100%);
-  .animate-global();
+  position: absolute;
+  left: 0;
+  top: 0;
+  .animate-global(@prop: left);
 
   @media screen and (max-width: @size-sm) {
-    display: none;
+    left: 130px;
   }
 
   .avatar {
@@ -208,11 +238,13 @@ body{
   width: 400px;
   text-align: center;
   position: relative;
-  .animate-global();
+  left: 130px;
+  .animate-global(@prop: left);
 
   @media screen and (max-width: @size-sm) {
     width: 100%;
     float: none;
+    left: 0;
   }
 
   .logo {
@@ -301,13 +333,16 @@ body{
 
 .blog-post {
   background-color: #fafafa;
+  padding-top: 50px;
 }
 
 .blog-post-wrapper {
-  max-width: 720px;
+  max-width: 754px;
+  padding-left: 18px;
+  padding-right: 18px;
   margin-left: auto;
   margin-right: auto;
-  font-family: "Lora", serif;
+  font-family: "Droid Serif", serif;
 
   figure {
     margin: 3rem 0 0;

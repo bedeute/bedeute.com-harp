@@ -1,10 +1,8 @@
 {
   "name": "harpjs",
-
   "authors": [
     "bedeute <bedeute@gmail.com>"
   ],
-
   "description": "",
   "main": "",
   "license": "WTFPL",
@@ -17,11 +15,11 @@
     "test",
     "tests"
   ],
-
   "dependencies": {
-    "spectre.css": "^0.1.26"
+    "spectre.css": "^0.1.26",
+    "jquery": "^3.1.1",
+    "headroom.js": "https://npmcdn.com/headroom.js/bower.zip"
   },
-
   "install": {
     "path": {
       "base": "_bower_components",
@@ -29,9 +27,8 @@
       "js": "assets/scripts",
       "/[sc|le]ss$/": "assets/styles"
     },
-
     "sources": {
-        "spectre.css": "_bower_components/spectre.css/spectre.less"
+      "spectre.css": "_bower_components/spectre.css/spectre.less"
     }
   }
 }
